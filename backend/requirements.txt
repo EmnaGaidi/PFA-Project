@@ -1,0 +1,9 @@
+requests
+pandas
+numpy
+datetime
+json
+tensorflow
+transformers
+flask
+flask-cors

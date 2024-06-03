@@ -1,0 +1,28 @@
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+<div class="container">
+  <form (ngSubmit)="submitForm()">
+    <p>Predict Instagram User Interests</p>
+    <input type="text" placeholder="UserName" [(ngModel)]="userName" name="userName"><br>
+    <input type="submit" value="Submit"><br>
+  </form>
+
+  <div class="interests" *ngIf="userInterests$ | async as userInterests">
+    <p>Interests:</p>
+    <ul>
+      <li *ngFor="let interest of userInterests | keyvalue">
+        <p>{{ interest.key }}: {{ interest.value.join(', ') }}</p>
+      </li>
+    </ul>
+  </div>
+
+  <div class="drops">
+    <div class="drop drop-1"></div>
+    <div class="drop drop-2"></div>
+    <div class="drop drop-3"></div>
+    <div class="drop drop-4"></div>
+    <div class="drop drop-5"></div>
+  </div>
+</div>
+
